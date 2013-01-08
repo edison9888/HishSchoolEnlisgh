@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GKViewController.h"
 @implementation AppDelegate
 
 - (void)dealloc
@@ -19,8 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    [NSThread sleepForTimeInterval:0.5];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    GKViewController *gk=[[GKViewController alloc]init];
+    self.window.rootViewController=gk;
+    [gk release];
     [self.window makeKeyAndVisible];
     return YES;
 }
