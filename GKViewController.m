@@ -136,7 +136,7 @@
     
     LishViewController *lish=[[LishViewController alloc]init];
     lish.gread=grad;
-    NSLog(@"%d",lish.gread);
+//    NSLog(@"%d",lish.gread);
     UINavigationController *naviLish=[[UINavigationController alloc]initWithRootViewController:lish];
     UIImage *lishImage=[[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"listening_normal" ofType:@"png"]];
     lish.tabBarItem.image=lishImage;

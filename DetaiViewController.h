@@ -8,16 +8,33 @@
 
 #import <UIKit/UIKit.h>
 #import "Listh.h"
-#import <AVFoundation/AVFoundation.h>
+#import "ListhViewController.h"
+
+@class AudioStreamer;
 
 @interface DetaiViewController : UIViewController
 {
+   
+    AudioStreamer *streamer;
     Listh *listh;
     UIImageView *view;
     UIProgressView *pView;
-    AVAudioPlayer *audioPlayer;
+    NSTimer *progressUpdateTimer;
     UISlider *slider;
+    UIButton *but;
+    NSString *sImage;
+    UIButton *optionBut;
+    UIButton *optionA;
+    UIButton *optionB;
+    UIButton *optionC;
+    UIButton *optionD;
+    UIButton *button;
+    int answerX;
+    UITextView *answerScrollView;
+    UIView *answerView;
+    NSMutableArray *copyArray;
 }
 @property(nonatomic,retain)Listh *listh;
+@property(nonatomic,retain)NSMutableArray *copyArray;
 
 @end

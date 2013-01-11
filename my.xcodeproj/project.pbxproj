@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0F36A64D169BD48800EC841D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36A64C169BD48800EC841D /* AVFoundation.framework */; };
+		0F36A650169C04A100EC841D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36A64F169C04A100EC841D /* MediaPlayer.framework */; };
+		0F36A65B169C1B2600EC841D /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F36A65A169C1B2600EC841D /* AudioStreamer.m */; };
+		0F36A65D169C1D0B00EC841D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36A65C169C1D0B00EC841D /* CFNetwork.framework */; };
+		0F36A65F169C1D7500EC841D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36A65E169C1D7500EC841D /* QuartzCore.framework */; };
+		0F36A661169C1DB200EC841D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36A660169C1DB200EC841D /* AudioToolbox.framework */; };
 		0F4E893E16981BE1002098AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4E893D16981BE1002098AC /* UIKit.framework */; };
 		0F4E894016981BE1002098AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4E893F16981BE1002098AC /* Foundation.framework */; };
 		0F4E894216981BE1002098AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4E894116981BE1002098AC /* CoreGraphics.framework */; };
@@ -330,11 +335,18 @@
 		0F91048C169959E900F234AD /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F91048B169959E900F234AD /* 002.png */; };
 		0F91049816999FB900F234AD /* ListhViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F91049716999FB900F234AD /* ListhViewController.m */; };
 		0F9158D6169AC6E200FD7A9D /* Listh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9158D5169AC6E200FD7A9D /* Listh.m */; };
-		0F9158DB169AFAC500FD7A9D /* DetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9158DA169AFAC500FD7A9D /* DetaiViewController.m */; };
+		0FFDFE35169D4DDB001CCBA2 /* DetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFDFE34169D4DDB001CCBA2 /* DetaiViewController.m */; };
+		0FFDFE37169D9466001CCBA2 /* bg-answer-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFDFE36169D9466001CCBA2 /* bg-answer-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F36A64C169BD48800EC841D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0F36A64F169C04A100EC841D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		0F36A659169C1B2600EC841D /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		0F36A65A169C1B2600EC841D /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		0F36A65C169C1D0B00EC841D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0F36A65E169C1D7500EC841D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0F36A660169C1DB200EC841D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0F4E893916981BE1002098AC /* my.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4E893D16981BE1002098AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0F4E893F16981BE1002098AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -669,7 +681,8 @@
 		0F9158D4169AC6E200FD7A9D /* Listh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listh.h; sourceTree = "<group>"; };
 		0F9158D5169AC6E200FD7A9D /* Listh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listh.m; sourceTree = "<group>"; };
 		0F9158D9169AFAC500FD7A9D /* DetaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaiViewController.h; sourceTree = "<group>"; };
-		0F9158DA169AFAC500FD7A9D /* DetaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetaiViewController.m; sourceTree = "<group>"; };
+		0FFDFE34169D4DDB001CCBA2 /* DetaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetaiViewController.m; sourceTree = "<group>"; };
+		0FFDFE36169D9466001CCBA2 /* bg-answer-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-answer-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +690,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F36A661169C1DB200EC841D /* AudioToolbox.framework in Frameworks */,
+				0F36A65F169C1D7500EC841D /* QuartzCore.framework in Frameworks */,
+				0F36A65D169C1D0B00EC841D /* CFNetwork.framework in Frameworks */,
+				0F36A650169C04A100EC841D /* MediaPlayer.framework in Frameworks */,
 				0F36A64D169BD48800EC841D /* AVFoundation.framework in Frameworks */,
 				0F4E893E16981BE1002098AC /* UIKit.framework in Frameworks */,
 				0F4E894016981BE1002098AC /* Foundation.framework in Frameworks */,
@@ -710,6 +727,10 @@
 		0F4E893C16981BE1002098AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F36A660169C1DB200EC841D /* AudioToolbox.framework */,
+				0F36A65E169C1D7500EC841D /* QuartzCore.framework */,
+				0F36A65C169C1D0B00EC841D /* CFNetwork.framework */,
+				0F36A64F169C04A100EC841D /* MediaPlayer.framework */,
 				0F36A64C169BD48800EC841D /* AVFoundation.framework */,
 				0F4E893D16981BE1002098AC /* UIKit.framework */,
 				0F4E893F16981BE1002098AC /* Foundation.framework */,
@@ -721,6 +742,9 @@
 		0F4E894316981BE1002098AC /* my */ = {
 			isa = PBXGroup;
 			children = (
+				0FFDFE36169D9466001CCBA2 /* bg-answer-1.png */,
+				0F36A659169C1B2600EC841D /* AudioStreamer.h */,
+				0F36A65A169C1B2600EC841D /* AudioStreamer.m */,
 				0F4E894C16981BE1002098AC /* AppDelegate.h */,
 				0F4E894D16981BE1002098AC /* AppDelegate.m */,
 				0F4E894416981BE1002098AC /* Supporting Files */,
@@ -1272,7 +1296,7 @@
 			isa = PBXGroup;
 			children = (
 				0F9158D9169AFAC500FD7A9D /* DetaiViewController.h */,
-				0F9158DA169AFAC500FD7A9D /* DetaiViewController.m */,
+				0FFDFE34169D4DDB001CCBA2 /* DetaiViewController.m */,
 			);
 			name = detailListh;
 			sourceTree = "<group>";
@@ -1638,6 +1662,7 @@
 				0F9104691699182800F234AD /* 81.png in Resources */,
 				0F91047E16992CFC00F234AD /* smart_normal.png in Resources */,
 				0F91048C169959E900F234AD /* 002.png in Resources */,
+				0FFDFE37169D9466001CCBA2 /* bg-answer-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,7 +1682,8 @@
 				0F9104761699210A00F234AD /* MoveViewController.m in Sources */,
 				0F91049816999FB900F234AD /* ListhViewController.m in Sources */,
 				0F9158D6169AC6E200FD7A9D /* Listh.m in Sources */,
-				0F9158DB169AFAC500FD7A9D /* DetaiViewController.m in Sources */,
+				0F36A65B169C1B2600EC841D /* AudioStreamer.m in Sources */,
+				0FFDFE35169D4DDB001CCBA2 /* DetaiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

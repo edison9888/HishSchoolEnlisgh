@@ -49,13 +49,20 @@
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    [str appendString:string];
+    NSString *tempStr=[Listh genHtmlStr:string];
+    [str appendString:[Listh flattenHTML:tempStr]];
+    
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     if ([elementName isEqualToString:@"item"]) {
         [dic removeAllObjects];
     }
+    else if ([elementName isEqualToString:@"id"])
+    {
+        [str setString:@""];
+    }
+
     else if ([elementName isEqualToString:@"title"])
     {
         [str setString:@""];
@@ -69,6 +76,10 @@
         [str setString:@""];
     }
     else if ([elementName isEqualToString:@"optionc"])
+    {
+        [str setString:@""];
+    }
+    else if ([elementName isEqualToString:@"optiond"])
     {
         [str setString:@""];
     }
@@ -95,6 +106,11 @@
     if ([elementName isEqualToString:@"item"]) {
         [array addObject:[NSMutableDictionary dictionaryWithDictionary:dic]];
     }
+    else if ([elementName isEqualToString:@"id"])
+    {
+        [dic setObject:[NSString stringWithString:str] forKey:elementName];
+    }
+
     else if ([elementName isEqualToString:@"title"])
     {
         [dic setObject:[NSString stringWithString:str] forKey:elementName];
@@ -111,6 +127,10 @@
     {
         [dic setObject:[NSString stringWithString:str] forKey:elementName];
     }
+    else if ([elementName isEqualToString:@"optiond"])
+    {
+        [dic setObject:[NSString stringWithString:str] forKey:elementName];
+    }
     else if ([elementName isEqualToString:@"answer"])
     {
        [dic setObject:[NSString stringWithString:str] forKey:elementName];
@@ -121,7 +141,7 @@
     }
     else if ([elementName isEqualToString:@"original"])
     {
-        [dic setObject:[NSString stringWithString:str] forKey:elementName];
+        [dic setObject:[NSString stringWithString:[Listh flattenHTML:str]] forKey:elementName];
     }
     else if ([elementName isEqualToString:@"midfile"])
     {
@@ -139,10 +159,12 @@
         tempListh.optionA=[element objectForKey:@"optiona"];
         tempListh.optionB=[element objectForKey:@"optionb"];
         tempListh.optionC=[element objectForKey:@"optionc"];
+        tempListh.optionD=[element objectForKey:@"optiond"];
         tempListh.answer=[element objectForKey:@"answer"];
         tempListh.newData=[element objectForKey:@"createdate"];
         tempListh.original=[element objectForKey:@"original"];
         tempListh.midFile=[element objectForKey:@"midfile"];
+        tempListh.midID=[element objectForKey:@"id"];
         if (tempListh.title!=nil) {
             [tempArray addObject:tempListh];
         }
@@ -255,8 +277,9 @@
      */
     DetaiViewController *detai=[[DetaiViewController alloc]init];
     detai.listh=[array objectAtIndex:indexPath.row];
+    detai.copyArray=array;
+    detai.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:detai animated:YES];
-
 }
 
 @end
