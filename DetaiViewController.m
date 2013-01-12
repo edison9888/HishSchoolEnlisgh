@@ -279,14 +279,12 @@
         [button setHidden:YES];
         [pView setHidden:YES];
         answerView=[[UIView alloc]initWithFrame:(CGRectMake(0, 200, 320, 210))];
-        UIImage *tempImage=[UIImage imageNamed:@"bg-answer-1.png"];
-        UIImageView *tempView=[[UIImageView alloc]initWithFrame:(CGRectMake(0, 0, 320, 170))];
-        tempView.image=tempImage;
         [self.view addSubview:answerView];
-        answerScrollView=[[UITextView alloc]initWithFrame:(CGRectMake(0, 20, 320, 150))];
+        NSString *answerStr=[NSString stringWithFormat:@"正确答案是\n%@\n原文是\n",self.listh.answer];
+        answerScrollView=[[UITextView alloc]initWithFrame:(CGRectMake(0, 0, 320, 180))];
         answerScrollView.font=[UIFont boldSystemFontOfSize:16];
         answerScrollView.editable=NO;
-        answerScrollView.text=self.listh.answer;
+        answerScrollView.text=[answerStr stringByAppendingString:self.listh.original];
         [answerView addSubview:answerScrollView];
         [self rightBack];
     }
@@ -361,6 +359,7 @@
     [answerView addSubview:tempAnswer];
     answerScrollView=[[UITextView alloc]initWithFrame:(CGRectMake(0, 20, 320, 150))];
     answerScrollView.font=[UIFont boldSystemFontOfSize:16];
+    answerScrollView.backgroundColor=[UIColor clearColor];
     answerScrollView.editable=NO;
     answerScrollView.text=self.listh.original;
     [answerView addSubview:answerScrollView];
@@ -372,9 +371,6 @@
     [button setHidden:YES];
     [pView setHidden:YES];
     answerView=[[UIView alloc]initWithFrame:(CGRectMake(0, 200, 320, 210))];
-    UIImage *tempImage=[UIImage imageNamed:@"bg-answer-1.png"];
-    UIImageView *tempView=[[UIImageView alloc]initWithFrame:(CGRectMake(0, 0, 320, 170))];
-    tempView.image=tempImage;    
     [self.view addSubview:answerView];
     [self midfileShow];
     [self rightBack];

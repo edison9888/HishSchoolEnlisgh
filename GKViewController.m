@@ -126,27 +126,32 @@
     HomeViewController *home=[[HomeViewController alloc]init];
     home.navigationItem.title=@"智能题库";
     UINavigationController *naviHome=[[UINavigationController alloc]initWithRootViewController:home];
-    UIImage *homeImage=[[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"smart_normal" ofType:@"png"]];
-    home.tabBarItem.image=homeImage;
+    UIImageView *imageView1=[[UIImageView alloc]initWithFrame:(CGRectMake(0, 0, 80, 50))];
+    imageView1.image=[UIImage imageNamed:@"smart_normal.png"];
    
     SendViewController *send=[[SendViewController alloc]init];
     UINavigationController *naviSend=[[UINavigationController alloc]initWithRootViewController:send];
-    UIImage *sendImage=[[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"dictionary_normal" ofType:@"png"]];
-    send.tabBarItem.image=sendImage;
+    UIImageView *imageView2=[[UIImageView alloc]initWithFrame:(CGRectMake(80, 0, 80, 50))];
+    imageView2.image=[UIImage imageNamed:@"dictionary_normal.png"];
+
     
     LishViewController *lish=[[LishViewController alloc]init];
     lish.gread=grad;
-//    NSLog(@"%d",lish.gread);
     UINavigationController *naviLish=[[UINavigationController alloc]initWithRootViewController:lish];
-    UIImage *lishImage=[[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"listening_normal" ofType:@"png"]];
-    lish.tabBarItem.image=lishImage;
+    UIImageView *imageView3=[[UIImageView alloc]initWithFrame:(CGRectMake(160, 0, 80, 50))];
+    imageView3.image=[UIImage imageNamed:@"listening_normal.png"];
     
     MoveViewController *move=[[MoveViewController alloc]init];
     UINavigationController *naviMove=[[UINavigationController alloc]initWithRootViewController:move];
-    UIImage *moveImage=[[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"more_normal" ofType:@"png"]];
-    move.tabBarItem.image=moveImage;
+    UIImageView *imageView4=[[UIImageView alloc]initWithFrame:(CGRectMake(240, 0, 80, 50))];
+    imageView4.image=[UIImage imageNamed:@"more_normal.png"];
 
     UITabBarController *tab=[[UITabBarController alloc]init];
+    tab.tabBar.tintColor=[UIColor clearColor];
+    [tab.tabBar insertSubview:imageView1 aboveSubview:naviHome.view];
+    [tab.tabBar insertSubview:imageView2 aboveSubview:naviSend.view];
+    [tab.tabBar insertSubview:imageView3 aboveSubview:naviLish.view];
+    [tab.tabBar insertSubview:imageView4 aboveSubview:naviMove.view];
 
     UIImage *tabImage=[[UIImage imageNamed:@"titlebar.png"]resizableImageWithCapInsets:(UIEdgeInsetsMake(0,420, 320,60 ))];
     if ([[tab tabBar] respondsToSelector:@selector(setBackgroundImage:)]) {
