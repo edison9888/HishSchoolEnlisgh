@@ -5,6 +5,7 @@
 //  Created by ibokan on 13-1-7.
 //  Copyright (c) 2013年 ibokan. All rights reserved.
 //
+extern int counter;
 
 #import "DetaiViewController.h"
 #import "AudioStreamer.h"
@@ -26,6 +27,22 @@
     }
     return self;
 }
+//保存数据
+-(void)setDataIsFile
+{
+    
+    NSMutableData *mData=[NSMutableData data];
+    NSKeyedArchiver *mTest=[[NSKeyedArchiver alloc]initForWritingWithMutableData:mData];
+    NSString *tempStr=[NSString stringWithFormat:@"%d",counter];
+    [mTest encodeObject:self.listh forKey:tempStr];
+    [mTest finishEncoding];
+    if ([mData writeToFile:@"test.txt" atomically:YES]==NO) {
+        NSLog(@"is WORING");
+    }
+    //    [NSKeyedArchiver archiveRootObject:self.listh toFile:@"test.txt"];
+    counter++;
+}
+
 
 - (void)viewDidLoad
 {
@@ -84,6 +101,7 @@
 //重新加载视图
 -(void)doNext
 {
+    sViewBack.hidden=YES;
     [self destroyStreamer];
     int index1;
     index1=[self.copyArray indexOfObject:self.listh];
@@ -128,7 +146,7 @@
 //    NSURL *url1=self.listh.midFile;
     
     
-    but=[UIButton buttonWithType:(UIButtonTypeRoundedRect)];
+    but=[UIButton buttonWithType:(UIButtonTypeCustom)];
     but.frame=CGRectMake(10, 330, 40, 40);
     [self setBackImage:@"btn_play_normal.png"];//调用播放背景
     [but addTarget:self action:@selector(doPlay) forControlEvents:(UIControlEventTouchUpInside)];
@@ -341,6 +359,8 @@
     UILabel *tempLable=[[UILabel alloc]initWithFrame:(CGRectMake(120, 0, 200, 20))];
     tempLable.text=str;
     [answerView addSubview:tempLable];
+    [self setDataIsFile];
+    
 }
 //回答的正确调用方法
 -(void)answerIsAnswer
@@ -370,7 +390,7 @@
     [but setHidden:YES];
     [button setHidden:YES];
     [pView setHidden:YES];
-    answerView=[[UIView alloc]initWithFrame:(CGRectMake(0, 200, 320, 210))];
+    answerView=[[UIView alloc]initWithFrame:(CGRectMake(0, 200, 320, 180))];
     [self.view addSubview:answerView];
     [self midfileShow];
     [self rightBack];
@@ -378,13 +398,13 @@
 //刷新答案视图
 -(void)rightBack
 {
-    UIView *viewBack=[[UIView alloc]initWithFrame:(CGRectMake(0, 0, 46, 49))];
+    sViewBack=[[UIView alloc]initWithFrame:(CGRectMake(0, 0, 46, 49))];
     UIButton *butBack=[UIButton buttonWithType:(UIButtonTypeCustom)];
     butBack.frame=CGRectMake(0, -5, 52, 45);
     butBack.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"icon_sync.png"]];
     [butBack addTarget:self action:@selector(doRightBack) forControlEvents:(UIControlEventTouchUpInside)];
-    [viewBack addSubview:butBack];
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:viewBack];
+    [sViewBack addSubview:butBack];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:sViewBack];
 }
 -(void)doRightBack
 {

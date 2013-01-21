@@ -33,10 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     array=[[NSMutableArray alloc]init];
     dic=[[NSMutableDictionary alloc]init];
     str =[[NSMutableString alloc]init];
-    
 //    NSString *s=@"http://api.winclass.net/serviceaction.do?method=getlisteningthemes&subjectid=3&currentpagenum=1&pagesize=30&gread=0&listentype=610&year=";
     NSURL *url=[[NSURL alloc]initWithString:self.sUrl];
     NSData *xmlData=[[NSData alloc]initWithContentsOfURL:url];

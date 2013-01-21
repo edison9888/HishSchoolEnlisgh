@@ -5,10 +5,22 @@
 //  Created by ibokan on 13-1-7.
 //  Copyright (c) 2013年 ibokan. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
-@interface Listh : NSObject
+#define kNewData @"newData"
+#define kUrl @"url"
+#define kTitle @"title"
+#define kOptionA @"optionA"
+#define kOptionB @"optionB"
+#define kOptionC @"optionC"
+#define kOptionD @"optionD"
+#define kAnswer @"answer"
+#define kOriginal @"original"
+#define kMidFile @"midFile"
+#define kMidID @"midID"
+
+
+@interface Listh : NSObject<NSCoding,NSCopying>
 {
     NSData *newData;
     NSURL *url;
@@ -37,5 +49,6 @@
 +(NSString *) genHtmlStr:(NSString *)str;
 +(NSString *)flattenHTML:(NSString *)htmlstr;
 +(NSMutableData *)replaceHtmlEntities:(NSMutableData *)data;
+
 
 @end

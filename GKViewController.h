@@ -11,13 +11,17 @@
 #import "SendViewController.h"
 #import "LishViewController.h"
 #import "MoveViewController.h"
+#import "HSTiKuViewController.h"
+int grad;
+int counter;
+
 
 @interface GKViewController : UIViewController<UITabBarControllerDelegate>
 {
     UIButton *but1;
     UIButton *but2;
     UIButton *but3;
-    int grad;
+    
 }
 
 @end

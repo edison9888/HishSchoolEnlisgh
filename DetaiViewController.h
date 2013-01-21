@@ -6,9 +6,11 @@
 //  Copyright (c) 2013年 ibokan. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 #import "Listh.h"
 #import "ListhViewController.h"
+#import "TheWrongTopicViewController.h"
 
 @class AudioStreamer;
 
@@ -33,6 +35,7 @@
     UITextView *answerScrollView;
     UIView *answerView;
     NSMutableArray *copyArray;
+    UIView *sViewBack;
 }
 @property(nonatomic,retain)Listh *listh;
 @property(nonatomic,retain)NSMutableArray *copyArray;

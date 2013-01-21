@@ -23,7 +23,8 @@
 #import "Listh.h"
 
 @implementation Listh
-@synthesize url,optionA,optionB,optionC,optionD,original,answer,midFile,midID;
+
+@synthesize url,optionA,optionB,optionC,optionD,original,answer,midFile,midID,title,newData;
 
 +(NSString *) genHtmlStr:(NSString *)str
 {
@@ -75,6 +76,44 @@
     return [[[NSString alloc] initWithString:htmlstr] autorelease]
     ;
 }
+
+
+//进行文件归档
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:midID forKey:kMidID];
+    [aCoder encodeObject:title forKey:kTitle];
+    [aCoder encodeObject:newData forKey:kNewData];
+    [aCoder encodeObject:url forKey:kUrl];
+    [aCoder encodeObject:optionA forKey:kOptionA];
+    [aCoder encodeObject:optionB forKey:kOptionB];
+    [aCoder encodeObject:optionC forKey:kOptionC];
+    [aCoder encodeObject:optionD forKey:kOptionD];
+    [aCoder encodeObject:answer forKey:kAnswer];
+    [aCoder encodeObject:original forKey:kOriginal];
+    [aCoder encodeObject:midFile forKey:kMidFile];
+    
+}
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+
+    if (self=[super init]) {
+        self.midID=[aDecoder decodeObjectForKey: kMidID];
+        self.title=[aDecoder decodeObjectForKey:kTitle];
+        self.newData=[aDecoder decodeObjectForKey:kNewData];
+        self.url=[aDecoder decodeObjectForKey:kUrl];
+        self.optionA=[aDecoder decodeObjectForKey:kOptionA];
+        self.optionB=[aDecoder decodeObjectForKey:kOptionB];
+        self.optionC=[aDecoder decodeObjectForKey:kOptionC];
+        self.optionD=[aDecoder decodeObjectForKey:kOptionD];
+        self.answer=[aDecoder decodeObjectForKey:kAnswer];
+        self.original=[aDecoder decodeObjectForKey:kOriginal];
+        self.midFile=[aDecoder decodeObjectForKey:kMidFile];
+    }
+    return self;
+}
+
+
 
 
 

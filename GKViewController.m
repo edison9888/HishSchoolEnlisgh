@@ -103,15 +103,15 @@
         case 0:
             
             [tempBut setBackgroundImage:[UIImage imageNamed:@"bg_choose_grade.png"] forState:(UIControlStateNormal)];
-            grad=0;
+            grad=1;
             break;
         case 1:
             [tempBut setBackgroundImage:[UIImage imageNamed:@"bg_choose_grade.png"] forState:(UIControlStateNormal)];
-            grad=1;
+            grad=2;
             break;
         case 2:
             [tempBut setBackgroundImage:[UIImage imageNamed:@"bg_choose_grade.png"] forState:(UIControlStateNormal)];
-            grad=2;
+            grad=3;
             break;
             
         default:
@@ -123,9 +123,9 @@
 -(void)nextPusth
 {
     
-    HomeViewController *home=[[HomeViewController alloc]init];
-    home.navigationItem.title=@"智能题库";
+    HSTiKuViewController *home=[[HSTiKuViewController alloc]init];
     UINavigationController *naviHome=[[UINavigationController alloc]initWithRootViewController:home];
+    home.grade=grad;
     UIImageView *imageView1=[[UIImageView alloc]initWithFrame:(CGRectMake(0, 0, 80, 50))];
     imageView1.image=[UIImage imageNamed:@"smart_normal.png"];
    

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Listening" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="midFile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="midID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="optionA" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionB" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionC" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optionD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="original" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Listening" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

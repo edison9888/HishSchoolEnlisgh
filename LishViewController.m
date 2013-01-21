@@ -42,15 +42,15 @@
 -(void)setScrollView
 {
     UIImage *image=[UIImage imageNamed:@"background.png"];
-    UIImageView *view=[[UIImageView alloc]initWithFrame:(CGRectMake(0,0, 320, 800))];
+    UIImageView *view=[[UIImageView alloc]initWithFrame:(CGRectMake(0,0, 320, 480))];
     view.image=image;
     
     sview=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320, 400)];
     sview.indicatorStyle=UIScrollViewIndicatorStyleWhite;
     sview.pagingEnabled=NO;
 //    [sview setContentOffset:(CGPointMake(0, 300)) animated:YES];
-    sview.contentSize=CGSizeMake(320, 800);
-    [sview addSubview:view];
+    sview.contentSize=CGSizeMake(320, 600);
+    [self.view addSubview:view];
     [self.view addSubview:sview];
 //    [self setBackgrourd];
     [self setButton:@"jddh.png" makeX:26 makeY:19 name:@"简短对话" tag:610];
@@ -65,8 +65,7 @@
     [self setButton:@"jcgs.png" makeX:132 makeY:179 name:@"精彩故事" tag:683];
     [self setButton:@"jkys.png" makeX:132 makeY:259 name:@"健康饮食" tag:653];
     [self setButton:@"tqqh.png" makeX:132 makeY:339 name:@"天气气候" tag:672];
-    [self setButton:@"jrqd.png" makeX:132 makeY:419 name:@"文化娱乐" tag:647];
-    
+    [self setButton:@"jrqd.png" makeX:132 makeY:419 name:@"文化娱乐" tag:647];    
     [self setButton:@"xdjs.png" makeX:239 makeY:19 name:@"现代技术" tag:651];
     [self setButton:@"wxtk.png" makeX:239 makeY:99 name:@"补全对话" tag:675];
     [self setButton:@"whyl.png" makeX:239 makeY:179 name:@"文化教育" tag:680];
